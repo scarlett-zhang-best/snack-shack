@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Fredoka', 'Baloo 2', 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(160deg, #f3e8ff 0%, #e9d5ff 50%, #d8b4fe 100%);
+  color: #3b0764;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+header h1 {
+  font-family: 'Baloo 2', 'Fredoka', cursive, sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  color: #6b21a8;
+  text-shadow: 2px 2px 0 #fff;
+}
+
+.tagline {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  color: #7e22ce;
+  margin-top: 0.25rem;
+}
+
+/* ---- Cake tower sign ---- */
+.sign {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.cake {
+  text-align: center;
+  filter: drop-shadow(0 8px 12px rgba(76, 29, 149, 0.35));
+}
+
+.tier {
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px 12px 6px 6px;
+  font-weight: 600;
+  color: #fff;
+  border: 3px solid #fff;
+  position: relative;
+}
+
+.tier::after { /* frosting drips */
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -8px;
+  height: 10px;
+  background: radial-gradient(circle at 10px -2px, rgba(255,255,255,.9) 8px, transparent 9px) repeat-x;
+  background-size: 24px 10px;
+}
+
+.tier.top    { width: min(70%, 280px); background: #a855f7; font-size: 1.4rem; }
+.tier.middle { width: min(90%, 380px); background: #9333ea; margin-top: 8px; font-size: 1.1rem; }
+.tier.bottom { width: min(100%, 460px); background: #7e22ce; margin-top: 8px; font-size: 1.1rem; }
+
+.plate {
+  width: min(105%, 500px);
+  height: 14px;
+  margin: 10px auto 0;
+  background: #faf5ff;
+  border: 3px solid #c084fc;
+  border-radius: 50%;
+}
+
+/* ---- Filters ---- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+.filter-btn {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: 3px solid #7e22ce;
+  background: #fff;
+  color: #6b21a8;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s, color 0.15s;
+}
+
+.filter-btn:hover { transform: translateY(-2px); background: #f3e8ff; }
+.filter-btn.active { background: #7e22ce; color: #fff; }
+
+/* ---- Snack grid ---- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border: 3px solid #c084fc;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(76, 29, 149, 0.2);
+  transition: transform 0.15s;
+}
+
+.card:hover { transform: scale(1.03); }
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover; /* cropped real photos */
+  display: block;
+}
+
+.card h3 {
+  font-family: 'Baloo 2', 'Fredoka', cursive, sans-serif;
+  color: #6b21a8;
+  padding: 0.5rem 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.price {
+  display: inline-block;
+  background: #9333ea;
+  color: #fff;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 0.2rem 0.9rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.badge {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #a855f7;
+  padding-bottom: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  color: #6b21a8;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .card img { height: 120px; }
+  .tier { padding: 0.6rem 1rem; }
+}
